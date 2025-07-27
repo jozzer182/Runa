@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../controllers/phrase_controller.dart';
 
 class PhraseView extends StatefulWidget {
@@ -164,103 +165,98 @@ class _PhraseViewState extends State<PhraseView> with TickerProviderStateMixin {
               return Transform.scale(
                 scale: _scaleAnimation.value,
                 child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // Título
-                        const Text(
-                          'Tu frase del día',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.grey,
-                            letterSpacing: 1.2,
-                          ),
-                        ),
-                        const SizedBox(height: 32),
-                        
-                        // Frase principal (clickeable)
-                        GestureDetector(
-                          onTap: _onPhraseTap,
-                          child: Container(
-                            padding: const EdgeInsets.all(32),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.1),
-                                  blurRadius: 20,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ],
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Título
+                          const Text(
+                            'Tu frase del día',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.grey,
+                              letterSpacing: 1.2,
                             ),
-                            child: Column(
-                              children: [
-                                Text(
-                                  '"${phrase.text}"',
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black87,
-                                    height: 1.4,
+                          ),
+                          const SizedBox(height: 32),
+                          
+                          // Frase principal (clickeable)
+                          GestureDetector(
+                            onTap: _onPhraseTap,
+                            child: Container(
+                              padding: const EdgeInsets.all(32),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.1),
+                                    blurRadius: 20,
+                                    offset: const Offset(0, 10),
                                   ),
-                                ),
-                                const SizedBox(height: 16),
-                                Text(
-                                  'Toca para la siguiente →',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.grey.shade500,
-                                    fontStyle: FontStyle.italic,
+                                ],
+                              ),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    '"${phrase.text}"',
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black87,
+                                      height: 1.4,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(height: 16),
+                                  Text(
+                                    'Toca para la siguiente →',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey.shade500,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        
-                        const SizedBox(height: 32),
-                        
-                        // Botones de acción
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            // Botón copiar
-                            IconButton(
-                              onPressed: _copyPhrase,
-                              icon: const Icon(Icons.copy),
-                              iconSize: 28,
-                              color: Colors.deepPurple,
-                              tooltip: 'Copiar frase',
-                            ),
-                            
-                            // Botón recargar
-                            IconButton(
-                              onPressed: () => _controller.forceReload(),
-                              icon: const Icon(Icons.refresh),
-                              iconSize: 28,
-                              color: Colors.deepPurple,
-                              tooltip: 'Nueva frase',
-                            ),
-                          ],
-                        ),
-                        
-                        const SizedBox(height: 16),
-                        
-                        // Indicador de fuente
-                        Text(
-                          _getSourceText(phrase.source),
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.grey.shade400,
-                            letterSpacing: 0.5,
+                          
+                          const SizedBox(height: 32),
+                          
+                          // Botones de acción
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              // Botón copiar
+                              IconButton(
+                                onPressed: _copyPhrase,
+                                icon: const Icon(Icons.copy),
+                                iconSize: 28,
+                                color: Colors.deepPurple,
+                                tooltip: 'Copiar frase',
+                              ),
+                              
+                              // Botón recargar
+                              IconButton(
+                                onPressed: () => _controller.forceReload(),
+                                icon: const Icon(Icons.refresh),
+                                iconSize: 28,
+                                color: Colors.deepPurple,
+                                tooltip: 'Nueva frase',
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
+                          
+                          const SizedBox(height: 16),
+                          
+                          // Indicador de fuente
+                          _getSourceWidget(phrase.source),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -272,17 +268,105 @@ class _PhraseViewState extends State<PhraseView> with TickerProviderStateMixin {
     );
   }
 
-  String _getSourceText(String source) {
-    switch (source) {
-      case 'gemini':
-        return '✨ GENERADA CON IA';
-      case 'firestore':
-        return '☁️ DESDE LA NUBE';
-      case 'base':
-        return '📖 FRASE CLÁSICA';
-      default:
-        return '💫 FRASE MOTIVACIONAL';
+  // Método para abrir el repositorio de GitHub
+  Future<void> _openGitHubRepository() async {
+    final Uri url = Uri.parse('https://github.com/jozzer182/Runa');
+    try {
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url, mode: LaunchMode.externalApplication);
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('No se pudo abrir el enlace'),
+              duration: Duration(seconds: 2),
+            ),
+          );
+        }
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Error al abrir el enlace'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
     }
+  }
+
+  // Método para crear el widget de fuente
+  Widget _getSourceWidget(String source) {
+    if (source == 'gemini') {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Texto "Frase generada con IA" con emoji
+          Text(
+            '🤖✨ Frase generada con IA',
+            style: TextStyle(
+              fontSize: 11,
+              color: Colors.deepPurple.shade300,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 0.3,
+            ),
+          ),
+          const SizedBox(height: 4),
+          // Enlace a GitHub
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: _openGitHubRepository,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.launch, // Ícono de "abrir enlace externo"
+                    size: 12,
+                    color: Colors.grey.shade500,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    'CÓDIGO EN GITHUB',
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.grey.shade500,
+                      letterSpacing: 0.5,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.grey.shade500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+    
+    // Para otros casos, devolver texto normal
+    String text;
+    switch (source) {
+      case 'firestore':
+        text = '☁️ DESDE LA NUBE';
+        break;
+      case 'base':
+        text = '📖 FRASE CLÁSICA';
+        break;
+      default:
+        text = '💫 FRASE MOTIVACIONAL';
+        break;
+    }
+    
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: 10,
+        color: Colors.grey.shade400,
+        letterSpacing: 0.5,
+      ),
+    );
   }
 
   @override

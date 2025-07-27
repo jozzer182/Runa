@@ -22,7 +22,7 @@ class RunaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Runa - Frases Motivacionales',
+      title: 'Runa ✨ - Tu dosis diaria de motivación',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,

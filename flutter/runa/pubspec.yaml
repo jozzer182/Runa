@@ -17,14 +17,34 @@ dependencies:
   shared_preferences: ^2.2.0
   http: ^1.1.0
   intl: ^0.19.0
+  url_launcher: ^6.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+  msix: ^3.16.10
 
 flutter:
   uses-material-design: true
   
   assets:
     - assets/base_phrases.json
+
+# Configuración para empaquetado .msix
+msix_config:
+  display_name: runa es
+  publisher_display_name: ZarabandaJose
+  identity_name: ZarabandaJose.runaes
+  publisher: CN=73E75044-1C00-4198-B32A-7DC00F5DAE1A
+  certificate_path: null
+  certificate_password: null
+  msix_version: 1.0.7.0
+  description: Tu dosis diaria de motivación con frases generadas por IA
+  capabilities: 'internetClient'
+  restricted_capabilities: []
+  execution_alias: null
+  logo_path: assets/AppIcons_runa/playstore.png
+  languages: es-ES
+  store: true
