@@ -1,0 +1,58 @@
+
+# Flutter & Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+*.flutter-plugins
+*.flutter-plugins-dependencies
+*.iml
+# Firebase configuration (contains sensitive information)
+flutter/lib/firebase_options.dart
+
+# Android & Kotlin
+android/.gradle/
+android/.idea/
+*.gradle
+*.iml
+.gradle
+/local.properties
+/.idea
+/captures/
+*.apk
+*.aar
+
+# Swift / Xcode
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+
+# Firebase
+firebase-debug.log
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Realm
+*.realm
+*.realm.lock
+*.realm.management/
