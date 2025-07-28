@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">runa</string>
+    <string name="widget_description">Muestra frases inspiradoras de Runa en tu pantalla de inicio</string>
 </resources>
