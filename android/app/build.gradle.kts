@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     // Add the Google services Gradle plugin
     id("com.google.gms.google-services")
+    // Realm plugin
+    alias(libs.plugins.realm.kotlin)
 }
 
 android {
@@ -55,12 +57,27 @@ dependencies {
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
 
-    // TODO: Add the dependencies for Firebase products you want to use
-    // When using the BoM, don't specify versions in Firebase dependencies
+    // Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-firestore")
+    // Firebase AI Logic usando Gemini Developer API (módulo oficial disponible)
+    implementation("com.google.firebase:firebase-ai")
 
-    // Add the dependencies for any other desired Firebase products
-    // https://firebase.google.com/docs/android/setup#available-libraries
+    // Realm Database
+    implementation(libs.realm.kotlin.base)
+
+    // ViewModel y LiveData
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
+    // Gson para JSON parsing
+    implementation(libs.gson)
+
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Navigation Compose (para futuras expansiones)
+    implementation(libs.androidx.navigation.compose)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
