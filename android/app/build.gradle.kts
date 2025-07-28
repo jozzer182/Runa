@@ -22,13 +22,25 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Configuración de firmado
+    signingConfigs {
+        create("release") {
+            keyAlias = "runa_key"
+            keyPassword = "runaapp2025"
+            storeFile = file("../runa-release-key.keystore")
+            storePassword = "runaapp2025"
+        }
+    }
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {

@@ -8,6 +8,11 @@
 .pub/
 build/
 ios/Flutter/Flutter.framework
+
+# Archivos de firmado (NUNCA subir a git)
+keystore.properties
+*.keystore
+*.jks
 ios/Flutter/Flutter.podspec
 *.flutter-plugins
 *.flutter-plugins-dependencies
