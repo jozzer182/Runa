@@ -77,16 +77,36 @@ class WidgetUpdateWorker(
         val componentName = ComponentName(applicationContext, RunaWidgetProvider::class.java)
         val appWidgetIds = appWidgetManager.getAppWidgetIds(componentName)
         
+        // Detectar tema oscuro
+        val isDarkTheme = isDarkModeEnabled(applicationContext)
+        
         for (appWidgetId in appWidgetIds) {
             val views = RemoteViews(applicationContext.packageName, R.layout.widget_layout)
             
             // Actualizar el texto de la frase
             views.setTextViewText(R.id.widget_phrase_text, fraseText)
             
+            // Ajustar colores según el tema
+            if (isDarkTheme) {
+                views.setTextColor(R.id.widget_phrase_text, 0xFFFFFFFF.toInt()) // Blanco puro
+                views.setTextColor(R.id.widget_refresh_button, 0xFF888888.toInt()) // Gris claro
+            } else {
+                views.setTextColor(R.id.widget_phrase_text, 0xFFFFFFFF.toInt()) // Blanco
+                views.setTextColor(R.id.widget_refresh_button, 0xFFE1BEE7.toInt()) // Violeta claro
+            }
+            
             // Mantener los listeners (se configuran en el provider)
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
         
-        Log.d(TAG, "Widgets actualizados con: $fraseText")
+        Log.d(TAG, "Widgets actualizados con: $fraseText (tema oscuro: $isDarkTheme)")
+    }
+
+    private fun isDarkModeEnabled(context: Context): Boolean {
+        return when (context.resources.configuration.uiMode and 
+                     android.content.res.Configuration.UI_MODE_NIGHT_MASK) {
+            android.content.res.Configuration.UI_MODE_NIGHT_YES -> true
+            else -> false
+        }
     }
 }

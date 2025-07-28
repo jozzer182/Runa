@@ -60,6 +60,18 @@ class RunaWidgetProvider : AppWidgetProvider() {
     private fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
         val views = RemoteViews(context.packageName, R.layout.widget_layout)
         
+        // Detectar tema oscuro
+        val isDarkTheme = isDarkModeEnabled(context)
+        
+        // Ajustar colores según el tema
+        if (isDarkTheme) {
+            views.setTextColor(R.id.widget_phrase_text, 0xFFFFFFFF.toInt()) // Blanco puro
+            views.setTextColor(R.id.widget_refresh_button, 0xFF888888.toInt()) // Gris claro
+        } else {
+            views.setTextColor(R.id.widget_phrase_text, 0xFFFFFFFF.toInt()) // Blanco
+            views.setTextColor(R.id.widget_refresh_button, 0xFFE1BEE7.toInt()) // Violeta claro
+        }
+        
         // Configurar el botón de refresh
         val refreshIntent = Intent(context, RunaWidgetProvider::class.java).apply {
             action = ACTION_REFRESH
@@ -100,6 +112,14 @@ class RunaWidgetProvider : AppWidgetProvider() {
         views.setTextViewText(R.id.widget_phrase_text, "🌟 Cargando frase inspiradora...")
         
         appWidgetManager.updateAppWidget(appWidgetId, views)
+    }
+
+    private fun isDarkModeEnabled(context: Context): Boolean {
+        return when (context.resources.configuration.uiMode and 
+                     android.content.res.Configuration.UI_MODE_NIGHT_MASK) {
+            android.content.res.Configuration.UI_MODE_NIGHT_YES -> true
+            else -> false
+        }
     }
 
     private fun schedulePeriodicUpdates(context: Context) {

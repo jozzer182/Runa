@@ -3,19 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/widget_background">
+    android:padding="12dp"
+    android:background="@drawable/widget_background_adaptive">
 
     <TextView
         android:id="@+id/widget_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="🌟 Runa"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:gravity="center"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="6dp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/widget_phrase_text"
@@ -23,28 +24,30 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="Cargando frase inspiradora..."
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textColor="#FFFFFF"
         android:gravity="center"
-        android:padding="8dp"
+        android:padding="6dp"
         android:textAlignment="center"
-        android:lineSpacingMultiplier="1.2" />
+        android:lineSpacingMultiplier="1.2"
+        android:maxLines="4"
+        android:ellipsize="end" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="4dp">
 
         <TextView
             android:id="@+id/widget_refresh_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="🔄 Nueva frase"
-            android:textSize="12sp"
+            android:textSize="10sp"
             android:textColor="#E1BEE7"
-            android:padding="8dp"
+            android:padding="6dp"
             android:background="?android:attr/selectableItemBackground"
             android:clickable="true" />
 
