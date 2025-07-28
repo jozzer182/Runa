@@ -43,6 +43,15 @@ xcuserdata/
 
 # Firebase
 firebase-debug.log
+google-services.json
+**/google-services.json
+GoogleService-Info.plist
+**/GoogleService-Info.plist
+
+# Firebase Admin SDK service account keys
+**/serviceAccountKey.json
+**/*service-account*.json
+**/*firebase-adminsdk*.json
 
 # Mac system files
 .DS_Store

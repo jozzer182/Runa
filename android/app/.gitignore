@@ -1,1 +1,13 @@
 /build
+
+# Firebase configuration (contains API keys and project info)
+google-services.json
+
+# Signing configurations
+*.keystore
+*.jks
+key.properties
+
+# Release artifacts
+*.apk
+*.aab

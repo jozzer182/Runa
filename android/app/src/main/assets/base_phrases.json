@@ -1,0 +1,184 @@
+{
+  "phrases": [
+    {
+      "id": 1,
+      "text": "Hoy es un buen día para comenzar de nuevo.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 2,
+      "text": "Eres más fuerte de lo que crees.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 3,
+      "text": "Los pequeños pasos también cuentan.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 4,
+      "text": "Cada día es una nueva oportunidad.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 5,
+      "text": "Confía en tu proceso.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 6,
+      "text": "El esfuerzo de hoy es el éxito de mañana.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 7,
+      "text": "Nunca es tarde para intentarlo.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 8,
+      "text": "Hazlo con miedo, pero hazlo.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 9,
+      "text": "Cree en ti, incluso cuando otros no lo hagan.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 10,
+      "text": "El cambio comienza en tu interior.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 11,
+      "text": "No renuncies a ti mismo.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 12,
+      "text": "La constancia vence al talento.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 13,
+      "text": "Tus pensamientos crean tu realidad.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 14,
+      "text": "La actitud lo cambia todo.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 15,
+      "text": "El fracaso es parte del camino al éxito.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 16,
+      "text": "Valora lo que tienes mientras trabajas por lo que sueñas.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 17,
+      "text": "Respira, confía y sigue adelante.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 18,
+      "text": "A veces descansar también es avanzar.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 19,
+      "text": "Si puedes soñarlo, puedes lograrlo.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 20,
+      "text": "Eres suficiente tal como eres.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 21,
+      "text": "Tu mejor versión te está esperando.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 22,
+      "text": "Hazlo por ti.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 23,
+      "text": "Sé el cambio que quieres ver.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 24,
+      "text": "El presente es tu mejor regalo.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 25,
+      "text": "Cuida tu mente como cuidas tu cuerpo.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 26,
+      "text": "No necesitas permiso para empezar.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 27,
+      "text": "Tú escribes tu historia.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 28,
+      "text": "Hoy es el primer día del resto de tu vida.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 29,
+      "text": "Agradece, aprende, avanza.",
+      "createdAt": null,
+      "source": "base"
+    },
+    {
+      "id": 30,
+      "text": "Lo mejor aún está por venir.",
+      "createdAt": null,
+      "source": "base"
+    }
+  ]
+}
