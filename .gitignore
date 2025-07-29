@@ -1,6 +1,24 @@
 
-# Flutter & Dart
-.dart_tool/
+# Flutter# Archivos de firmado y build scripts (NUNCA subir a git)
+keystore.properties
+*.keystore
+*.jks
+ios/Flutter/Flutter.framework
+*.flutter-plugins
+*.flutter-plugins-dependencies
+*.iml
+
+# Scripts de PowerShell con información sensible
+*.ps1
+build_*.ps1
+verify_*.ps1
+create_*.ps1
+install_*.ps1
+validate_*.ps1
+setup_*.ps1
+
+# Firebase configuration (contains sensitive information)
+flutter/lib/firebase_options.dartdart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
