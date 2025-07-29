@@ -4,7 +4,12 @@ import 'package:url_launcher/url_launcher.dart';
 import '../controllers/phrase_controller.dart';
 
 class PhraseView extends StatefulWidget {
-  const PhraseView({super.key});
+  final bool firebaseAvailable;
+  
+  const PhraseView({
+    super.key,
+    this.firebaseAvailable = false,
+  });
 
   @override
   State<PhraseView> createState() => _PhraseViewState();

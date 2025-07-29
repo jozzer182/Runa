@@ -1,0 +1,28 @@
+Why do you need the runFullTrust capability, and how will it be used in your product?
+
+Our application "runa es" is built with Flutter for Windows, which inherently requires runFullTrust capability due to technical limitations of the Flutter framework. Here's why:
+
+TECHNICAL NECESSITY:
+• Flutter for Windows compiles to Win32 native applications (.exe), not UWP apps
+• Flutter uses the Skia graphics engine which requires low-level Windows API access
+• The MSIX packaging tool automatically adds runFullTrust for Flutter Windows apps
+• It's technically impossible to create a Flutter Windows app without runFullTrust
+
+SPECIFIC USE CASES:
+• Firebase integration: Connects to Firestore for motivational phrase synchronization
+• Firebase AI (Gemini): Generates personalized motivational content
+• Local data storage: Implements offline fallback system for phrases and user preferences
+• System integration: Notifications, regional settings, and Windows theme adaptation
+
+SECURITY MEASURES:
+• Only uses minimal required capabilities: internetClient + runFullTrust
+• No access to sensitive user data (camera, microphone, location, personal files)
+• File access limited to application directory only
+• Network access restricted to Firebase services only
+
+ALTERNATIVES EVALUATED:
+• Attempted to package without runFullTrust - technically impossible with Flutter
+• UWP development not supported by Flutter framework
+• Web technologies would compromise offline functionality and native performance
+
+The runFullTrust capability is used responsibly and is the minimum requirement for Flutter Windows applications to function properly in the Microsoft Store ecosystem.

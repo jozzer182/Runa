@@ -32,7 +32,7 @@ flutter:
   assets:
     - assets/base_phrases.json
 
-# Configuración para empaquetado .msix
+# Configuración para empaquetado .msix (Microsoft Store)
 msix_config:
   display_name: runa es
   publisher_display_name: ZarabandaJose
@@ -40,11 +40,25 @@ msix_config:
   publisher: CN=73E75044-1C00-4198-B32A-7DC00F5DAE1A
   certificate_path: null
   certificate_password: null
-  msix_version: 1.0.7.0
-  description: Tu dosis diaria de motivación con frases generadas por IA
+  msix_version: 1.0.13.0
+  description: Tu dosis diaria de motivación con frases inspiradoras generadas por IA. Encuentra inspiración y mantente motivado todos los días con contenido personalizado.
   capabilities: 'internetClient'
-  restricted_capabilities: []
+  # Nota: runFullTrust se agrega automáticamente para aplicaciones Flutter Windows
+  # Esto es normal y aceptado por Microsoft Store con certificación adicional
   execution_alias: null
   logo_path: assets/AppIcons_runa/playstore.png
+  start_menu_icon_path: assets/AppIcons_runa/playstore.png
+  tile_icon_path: assets/AppIcons_runa/playstore.png
   languages: es-ES
   store: true
+  # Optimizaciones para Microsoft Store
+  trim_unused_packages: true
+  architecture: x64
+  install_certificate: false
+  install_certificate_in_store: false
+  sign_tool_options: null
+  trim_logo: true
+  icon_background_color: transparent
+  save_as_winget: false
+  manifest_path: AppxManifest.xml
+
