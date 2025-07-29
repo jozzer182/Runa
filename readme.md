@@ -1,8 +1,30 @@
-# Runa ✨
+# 🌟 Runa - Motivación Diaria
 
-**Frases motivacionales generadas por IA, en español.**
+**Tu dosis diaria de motivación con frases inspiradoras generadas por IA.**
 
-Runa es una app multiplataforma que ofrece frases motivacionales en español, generadas dinámicamente por inteligencia artificial. Diseñada para crecer, adaptarse y funcionar incluso sin conexión, esta aplicación busca inspirar y conectar emocionalmente con los usuarios en su día a día.
+Runa es una aplicación multiplataforma que proporciona frases motivacionales personalizadas en español, generadas dinámicamente por inteligencia artificial. Diseñada para funcionar offline y proteger tu privacidad, esta aplicación busca inspirar y conectar emocionalmente contigo en tu día a día.
+
+## 📱 Disponible en
+
+- 🛍️ **Huawei AppGallery** - [Próximamente]
+- 🏪 **Microsoft Store** - [Próximamente]  
+- 🤖 **Google Play Store** - [En desarrollo]
+
+## 🔒 Privacidad y Datos
+
+### Compromiso con la Privacidad
+Runa está diseñada con **privacidad por diseño**:
+
+- ❌ **NO recopilamos** datos personales identificables
+- ❌ **NO accedemos** a contactos, ubicación o archivos personales
+- ✅ **Funciona offline** - No requiere conexión constante
+- ✅ **Datos locales** - Todo se almacena en tu dispositivo
+- ✅ **Sin cuentas** - No requiere registro
+
+### Documentos Legales
+- 📜 [Política de Privacidad](./PRIVACY_POLICY.md)
+- 📋 [Términos de Servicio](./TERMS_OF_SERVICE.md)
+- 🌐 [Privacy Policy (Web)](https://jozzer182.github.io/Runa/privacy-policy.html)
 
 ---
 
