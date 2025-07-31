@@ -11,7 +11,7 @@ import WidgetKit
 class WidgetDataService {
     static let shared = WidgetDataService()
     
-    private let suiteName = "group.com.josezarabanda.runa"
+    private let suiteName = "group.com.josezarabanda.runainspiracion"
     private let phrasesKey = "widget_phrases"
     private let currentPhraseKey = "current_phrase"
     private let lastUpdateKey = "last_update"

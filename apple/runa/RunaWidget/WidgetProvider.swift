@@ -8,6 +8,13 @@
 import WidgetKit
 import SwiftUI
 
+// MARK: - SimpleEntry
+struct SimpleEntry: TimelineEntry {
+    let date: Date
+    let phrase: String
+}
+
+// MARK: - Provider
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), phrase: "Cargando tu frase inspiradora...")
@@ -30,38 +37,31 @@ struct Provider: TimelineProvider {
         var entries: [SimpleEntry] = []
         let currentDate = Date()
         
-        // Intentar obtener frases del almacenamiento compartido
-        let phrases = await getPhrasesFromStorage()
+        // Obtener frases del storage compartido
+        let phrases = getPhrasesFromStorage()
         
-        // Crear entradas para las próximas 24 horas, actualizando cada 4 horas
+        // Generar entradas para las próximas 24 horas (cada 4 horas)
         for hourOffset in stride(from: 0, to: 24, by: 4) {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let randomPhrase = phrases.randomElement() ?? "Tu potencial es infinito. ¡Hazlo realidad!"
+            let phraseIndex = hourOffset / 4
+            let selectedPhrase = phrases[phraseIndex % phrases.count]
             
-            let entry = SimpleEntry(date: entryDate, phrase: randomPhrase)
+            let entry = SimpleEntry(date: entryDate, phrase: selectedPhrase)
             entries.append(entry)
         }
         
         return entries
     }
     
-    private func getPhrasesFromStorage() async -> [String] {
-        // Intentar leer desde UserDefaults compartido
-        if let sharedDefaults = UserDefaults(suiteName: "group.com.josezarabanda.runa") {
-            // Intentar obtener la frase actual primero
-            if let currentPhrase = sharedDefaults.string(forKey: "current_phrase"),
-               !currentPhrase.isEmpty {
-                return [currentPhrase]
-            }
-            
-            // Si no hay frase actual, usar las frases guardadas
-            if let savedPhrases = sharedDefaults.array(forKey: "widget_phrases") as? [String],
-               !savedPhrases.isEmpty {
+    private func getPhrasesFromStorage() -> [String] {
+        // Intentar obtener frases del App Group (compartido con la app principal)
+        if let sharedDefaults = UserDefaults(suiteName: "group.com.josezarabanda.runainspiracion") {
+            if let savedPhrases = sharedDefaults.array(forKey: "widget_phrases") as? [String], !savedPhrases.isEmpty {
                 return savedPhrases
             }
         }
         
-        // Frases por defecto si no hay datos
+        // Si no hay frases guardadas, usar frases por defecto
         return getDefaultPhrases()
     }
     
@@ -79,9 +79,4 @@ struct Provider: TimelineProvider {
             "Cree en ti mismo y todo será posible."
         ]
     }
-}
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let phrase: String
 }
