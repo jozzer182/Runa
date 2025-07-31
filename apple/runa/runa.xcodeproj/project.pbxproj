@@ -12,16 +12,65 @@
 		E373C8B42E3A1D360013ED9D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8B32E3A1D360013ED9D /* FirebaseCore */; };
 		E373C8B62E3A1D360013ED9D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8B52E3A1D360013ED9D /* FirebaseFirestore */; };
 		E373C8D82E3A27CC0013ED9D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8D72E3A27CC0013ED9D /* RealmSwift */; };
+		E373C9912E3B76E20013ED9D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E373C9902E3B76E20013ED9D /* WidgetKit.framework */; };
+		E373C9932E3B76E20013ED9D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E373C9922E3B76E20013ED9D /* SwiftUI.framework */; };
+		E373C9A42E3B76E40013ED9D /* RunaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E373C98E2E3B76E20013ED9D /* RunaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E373C9A22E3B76E40013ED9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E373C8962E3A1B5B0013ED9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E373C98D2E3B76E20013ED9D;
+			remoteInfo = RunaWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E373C9A92E3B76E50013ED9D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E373C9A42E3B76E40013ED9D /* RunaWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E373C89E2E3A1B5B0013ED9D /* runa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E373C98E2E3B76E20013ED9D /* RunaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RunaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E373C9902E3B76E20013ED9D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E373C9922E3B76E20013ED9D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E373C9AF2E3B81DA0013ED9D /* RunaWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunaWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E373C9A52E3B76E50013ED9D /* Exceptions for "RunaWidget" folder in "RunaWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E373C98D2E3B76E20013ED9D /* RunaWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E373C8A02E3A1B5B0013ED9D /* runa */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = runa;
+			sourceTree = "<group>";
+		};
+		E373C9942E3B76E20013ED9D /* RunaWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E373C9A52E3B76E50013ED9D /* Exceptions for "RunaWidget" folder in "RunaWidgetExtension" target */,
+			);
+			path = RunaWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -39,13 +88,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E373C98B2E3B76E20013ED9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E373C9932E3B76E20013ED9D /* SwiftUI.framework in Frameworks */,
+				E373C9912E3B76E20013ED9D /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		E373C8952E3A1B5B0013ED9D = {
 			isa = PBXGroup;
 			children = (
+				E373C9AF2E3B81DA0013ED9D /* RunaWidgetExtension.entitlements */,
 				E373C8A02E3A1B5B0013ED9D /* runa */,
+				E373C9942E3B76E20013ED9D /* RunaWidget */,
+				E373C98F2E3B76E20013ED9D /* Frameworks */,
 				E373C89F2E3A1B5B0013ED9D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,8 +115,18 @@
 			isa = PBXGroup;
 			children = (
 				E373C89E2E3A1B5B0013ED9D /* runa.app */,
+				E373C98E2E3B76E20013ED9D /* RunaWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E373C98F2E3B76E20013ED9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E373C9902E3B76E20013ED9D /* WidgetKit.framework */,
+				E373C9922E3B76E20013ED9D /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,10 +139,12 @@
 				E373C89A2E3A1B5B0013ED9D /* Sources */,
 				E373C89B2E3A1B5B0013ED9D /* Frameworks */,
 				E373C89C2E3A1B5B0013ED9D /* Resources */,
+				E373C9A92E3B76E50013ED9D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E373C9A32E3B76E40013ED9D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E373C8A02E3A1B5B0013ED9D /* runa */,
@@ -88,6 +161,28 @@
 			productReference = E373C89E2E3A1B5B0013ED9D /* runa.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E373C98D2E3B76E20013ED9D /* RunaWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E373C9A62E3B76E50013ED9D /* Build configuration list for PBXNativeTarget "RunaWidgetExtension" */;
+			buildPhases = (
+				E373C98A2E3B76E20013ED9D /* Sources */,
+				E373C98B2E3B76E20013ED9D /* Frameworks */,
+				E373C98C2E3B76E20013ED9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E373C9942E3B76E20013ED9D /* RunaWidget */,
+			);
+			name = RunaWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = RunaWidgetExtension;
+			productReference = E373C98E2E3B76E20013ED9D /* RunaWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +194,9 @@
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					E373C89D2E3A1B5B0013ED9D = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					E373C98D2E3B76E20013ED9D = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
@@ -122,12 +220,20 @@
 			projectRoot = "";
 			targets = (
 				E373C89D2E3A1B5B0013ED9D /* runa */,
+				E373C98D2E3B76E20013ED9D /* RunaWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E373C89C2E3A1B5B0013ED9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E373C98C2E3B76E20013ED9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -144,7 +250,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E373C98A2E3B76E20013ED9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E373C9A32E3B76E40013ED9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E373C98D2E3B76E20013ED9D /* RunaWidgetExtension */;
+			targetProxy = E373C9A22E3B76E40013ED9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E373C8A72E3A1B5D0013ED9D /* Debug */ = {
@@ -271,10 +392,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = runa/runa.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NC63LKZFXN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -289,6 +411,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.josezarabanda.runa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,10 +423,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = runa/runa.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NC63LKZFXN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -318,6 +442,63 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.josezarabanda.runa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E373C9A72E3B76E50013ED9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RunaWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NC63LKZFXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunaWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RunaWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.josezarabanda.runa.RunaWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E373C9A82E3B76E50013ED9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RunaWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NC63LKZFXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunaWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RunaWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.josezarabanda.runa.RunaWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,6 +522,15 @@
 			buildConfigurations = (
 				E373C8AA2E3A1B5D0013ED9D /* Debug */,
 				E373C8AB2E3A1B5D0013ED9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E373C9A62E3B76E50013ED9D /* Build configuration list for PBXNativeTarget "RunaWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E373C9A72E3B76E50013ED9D /* Debug */,
+				E373C9A82E3B76E50013ED9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

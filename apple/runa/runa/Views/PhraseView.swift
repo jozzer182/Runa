@@ -71,6 +71,14 @@ struct PhraseView: View {
                 
                 Spacer()
                 
+                // Botón de configuración del widget
+                NavigationLink(destination: WidgetConfigView()) {
+                    Image(systemName: "rectangle.stack")
+                        .font(.title2)
+                        .foregroundColor(.white.opacity(0.8))
+                }
+                .padding(.trailing, 8)
+                
                 connectionStatusIndicator
             }
             
