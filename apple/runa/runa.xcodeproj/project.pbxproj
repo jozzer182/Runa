@@ -11,6 +11,7 @@
 		E373C8B22E3A1D360013ED9D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8B12E3A1D360013ED9D /* FirebaseAnalytics */; };
 		E373C8B42E3A1D360013ED9D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8B32E3A1D360013ED9D /* FirebaseCore */; };
 		E373C8B62E3A1D360013ED9D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8B52E3A1D360013ED9D /* FirebaseFirestore */; };
+		E373C8D82E3A27CC0013ED9D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8D72E3A27CC0013ED9D /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 				E373C8B22E3A1D360013ED9D /* FirebaseAnalytics in Frameworks */,
 				E373C8B62E3A1D360013ED9D /* FirebaseFirestore in Frameworks */,
 				E373C8B42E3A1D360013ED9D /* FirebaseCore in Frameworks */,
+				E373C8D82E3A27CC0013ED9D /* RealmSwift in Frameworks */,
 				E373C8B02E3A1D360013ED9D /* FirebaseAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +82,7 @@
 				E373C8B12E3A1D360013ED9D /* FirebaseAnalytics */,
 				E373C8B32E3A1D360013ED9D /* FirebaseCore */,
 				E373C8B52E3A1D360013ED9D /* FirebaseFirestore */,
+				E373C8D72E3A27CC0013ED9D /* RealmSwift */,
 			);
 			productName = runa;
 			productReference = E373C89E2E3A1B5B0013ED9D /* runa.app */;
@@ -111,6 +114,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E373C8AE2E3A1D360013ED9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E373C8D62E3A27CC0013ED9D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E373C89F2E3A1B5B0013ED9D /* Products */;
@@ -267,8 +271,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,8 +300,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -348,6 +356,14 @@
 				minimumVersion = 12.0.0;
 			};
 		};
+		E373C8D62E3A27CC0013ED9D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -370,6 +386,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E373C8AE2E3A1D360013ED9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		E373C8D72E3A27CC0013ED9D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E373C8D62E3A27CC0013ED9D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

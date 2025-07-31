@@ -24,6 +24,7 @@ struct runaApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.dark) // Forzar modo oscuro para mejor apariencia
         }
     }
 }
