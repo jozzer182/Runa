@@ -12,9 +12,10 @@
 		E373C8B42E3A1D360013ED9D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8B32E3A1D360013ED9D /* FirebaseCore */; };
 		E373C8B62E3A1D360013ED9D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8B52E3A1D360013ED9D /* FirebaseFirestore */; };
 		E373C8D82E3A27CC0013ED9D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E373C8D72E3A27CC0013ED9D /* RealmSwift */; };
-		E373C9912E3B76E20013ED9D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E373C9902E3B76E20013ED9D /* WidgetKit.framework */; };
-		E373C9932E3B76E20013ED9D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E373C9922E3B76E20013ED9D /* SwiftUI.framework */; };
 		E373C9A42E3B76E40013ED9D /* RunaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E373C98E2E3B76E20013ED9D /* RunaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E3E9AD2A2E44013F00420F8A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E373C9922E3B76E20013ED9D /* SwiftUI.framework */; };
+		E3E9AD2D2E44014100420F8A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E373C9902E3B76E20013ED9D /* WidgetKit.framework */; };
+		E3E9AD612E44085400420F8A /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E373C8D72E3A27CC0013ED9D /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,17 @@
 				E373C9A42E3B76E40013ED9D /* RunaWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E9AD622E44085400420F8A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E3E9AD612E44085400420F8A /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -92,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E373C9932E3B76E20013ED9D /* SwiftUI.framework in Frameworks */,
-				E373C9912E3B76E20013ED9D /* WidgetKit.framework in Frameworks */,
+				E3E9AD2A2E44013F00420F8A /* SwiftUI.framework in Frameworks */,
+				E3E9AD2D2E44014100420F8A /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +152,7 @@
 				E373C89B2E3A1B5B0013ED9D /* Frameworks */,
 				E373C89C2E3A1B5B0013ED9D /* Resources */,
 				E373C9A92E3B76E50013ED9D /* Embed Foundation Extensions */,
+				E3E9AD622E44085400420F8A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,7 +408,7 @@
 				CODE_SIGN_ENTITLEMENTS = runa/runa.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = NC63LKZFXN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -428,7 +441,7 @@
 				CODE_SIGN_ENTITLEMENTS = runa/runa.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = NC63LKZFXN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -460,7 +473,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = RunaWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = NC63LKZFXN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RunaWidget/Info.plist;
@@ -488,7 +501,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = RunaWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = NC63LKZFXN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RunaWidget/Info.plist;
