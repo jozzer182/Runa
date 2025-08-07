@@ -16,8 +16,8 @@ android {
         applicationId = "com.zarabandajose.runa"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,6 +41,27 @@ android {
                 "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("release")
+            
+            // Configuración para símbolos de depuración nativos
+            ndk {
+                debugSymbolLevel = "FULL"
+            }
+        }
+    }
+    
+    // Configuración para Android App Bundle
+    bundle {
+        language {
+            // Desactiva la división por idioma para simplificar
+            enableSplit = false
+        }
+        density {
+            // Permite división por densidad para optimizar tamaño
+            enableSplit = true
+        }
+        abi {
+            // Permite división por ABI para optimizar tamaño
+            enableSplit = true
         }
     }
     compileOptions {
